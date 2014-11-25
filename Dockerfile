@@ -7,7 +7,7 @@ RUN  apt-get update \
   && echo "username ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers \
   && rm -rf /var/www/html \
   && ln -s /home/username/Web /var/www/html \
-  && curl -sSL https://raw.githubusercontent.com/leeolayvar/kdcli/master/installers/meta | fish
+  && curl -sSL https://raw.githubusercontent.com/koding/kpm-scripts/master/installers/meta | fish
 
 ADD Web /home/username/Web
 RUN chown -R username: /home/username/Web
