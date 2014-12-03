@@ -1,4 +1,5 @@
 FROM ubuntu:14.04
+
 RUN  apt-get update \
 # Remove the policy-rc.d disable
   && printf '#!/bin/sh\nexit 0\n' > /usr/sbin/policy-rc.d \
@@ -22,5 +23,6 @@ RUN  mkdir -p /home/username/.config/fish \
   && echo 'alias logname="echo username"' >> /home/username/.bashrc \
   && echo 'function logname; echo username; end' >> /home/username/.config/fish/config.fish
 
+ENV KPM_DEBUG true
 
 WORKDIR /home/username
